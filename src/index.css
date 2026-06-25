@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #fdf2f0;
+  --color-brand-100: #f9d9d2;
+  --color-brand-200: #f4b8ab;
+  --color-brand-300: #ed8c7a;
+  --color-brand-400: #e5684f;
+  --color-brand-500: #d94a2b;
+  --color-brand-600: #b93b20;
+  --color-brand-700: #9a301a;
+  --color-brand-800: #7e2815;
+  --color-brand-900: #621f10;
+
+  --color-fire-50: #fff7ed;
+  --color-fire-100: #ffedd5;
+  --color-fire-200: #fed7aa;
+  --color-fire-300: #fdba74;
+  --color-fire-400: #fb923c;
+  --color-fire-500: #f97316;
+  --color-fire-600: #ea580c;
+  --color-fire-700: #c2410c;
+  --color-fire-800: #9a3412;
+
+  --color-dark-50: #f9fafb;
+  --color-dark-100: #f3f4f6;
+  --color-dark-200: #e5e7eb;
+  --color-dark-300: #d1d5db;
+  --color-dark-400: #9ca3af;
+  --color-dark-500: #6b7280;
+  --color-dark-600: #4b5563;
+  --color-dark-700: #374151;
+  --color-dark-800: #1f2937;
+  --color-dark-850: #1a1d23;
+  --color-dark-900: #111113;
+  --color-dark-950: #0a0a0b;
+
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-dark-950 text-dark-200 font-body antialiased;
+  }
+  ::selection {
+    @apply bg-brand-500/30 text-white;
+  }
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-950;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-700 rounded-full hover:bg-dark-600;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 md:py-24 lg:py-32 scroll-mt-20;
+  }
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-400 via-fire-400 to-brand-500 bg-clip-text text-transparent;
+  }
+  .gradient-overlay {
+    background: linear-gradient(to top, rgba(10, 10, 11, 0.95) 0%, rgba(10, 10, 11, 0.7) 40%, rgba(10, 10, 11, 0.3) 70%, transparent 100%);
+  }
+  .gradient-overlay-hero {
+    background: linear-gradient(to top, rgba(10, 10, 11, 0.95) 0%, rgba(10, 10, 11, 0.6) 30%, rgba(10, 10, 11, 0.2) 60%, transparent 100%);
+  }
+}
